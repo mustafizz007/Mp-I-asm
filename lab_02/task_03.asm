@@ -2,10 +2,10 @@
 .STACK 100H
 .DATA
 
-A dw 1
-B dw 2
-C dw 3
-D dw 5
+A db 1
+B db 2
+C db 3
+D db 5
 
 
 .CODE
@@ -17,43 +17,43 @@ MOV DS,AX
 
    ;(1 + 2) * (3 - 1) / 5 + 3 + 2 - (1 * 2)
    
-   MOV AX, A
+   MOV Al, A
 
    
-   ADD AX, B
+   ADD Al, B
    
-   MOV CX, C
+   MOV Cl, C
    
-   SUB CX, A
+   SUB Cl, A
    
-   MUL CX 
-   
-   
-   MOV BX, D
-   
-   DIV BX
-   
-   MOV DX, AX
-   
-   MOV AX, C
-   ADD AX, B
-   
-   ADD AX, DX
-   
-   MOV BX, AX
+   MUL Cl 
    
    
+   MOV Bl, D
+   
+   DIV Bl
+   
+   MOV Dl, Al
+   
+   ADD Al, C
+   ADD Al, B
+   
+   ;ADD Al, Dl
+   
+   MOV Bl, Al
    
    
    
-   MOV AX, A
-   MOV CX, B
    
-   MUL CX
    
-   SUB BX, AX
+   MOV AL, A
+   MOV Cl, B
    
-   MOV AX, BX
+   MUL Cl
+   
+   SUB Bl, Al
+   
+   ;MOV Al, Bl
    
    
 

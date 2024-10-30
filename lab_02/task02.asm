@@ -2,11 +2,11 @@
 .STACK 100H
 .DATA 
 
-A dw 5
-B dw 4
-C dw 3
-d dw 2
-E dw 6
+A db 5
+B db 4
+C db 3
+D db 2
+E db 6
 
 .CODE
 MAIN PROC
@@ -17,21 +17,21 @@ MOV DS,AX
 
    ;(a + b)  * (c - d) / e   
    
-   MOV AX, A
-   MOV BX, B
+   MOV AL, A
+   MOV BL, B
    
-   ADD AX, BX
+   ADD AL, BL
    
-   MOV CX, C
-   MOV DX, D
+   MOV CL, C
+   MOV DL, D
    
-   SUB CX, DX
+   SUB CL, DL
    
-   MUL CX
+   MUL CL
    
-   MOV BX, E
+   MOV BL, E
    
-   DIV BX
+   DIV BL
    
    
    

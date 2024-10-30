@@ -26,13 +26,13 @@ DIV BL
 
 ;3. X * Y / Z
 
-MOV AX, 5
-MOV BX, 7
-MOV DX, 5
+MOV AL, 5
+MOV BL, 7
+MOV DL, 5
 
-MUL BX
+MUL BL
 
-DIV BL
+DIV DL
 
 
 
