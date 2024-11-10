@@ -1,44 +1,49 @@
-.MODEL SMALL
+          .MODEL SMALL
 .STACK 100H
-.DATA
+.DATA  
 
- a db "please enter a character: $"
- b db "the entered char is : $"
- 
- 
 
+
+M db "Please insert a character: $" 
+MM DB "ENTERED CHAR IS: $"
+   
+   
+   
+   
 .CODE
 MAIN PROC
 ;iniitialize DS
 MOV AX,@DATA
 MOV DS,AX
-;enter your code here
+;enter your code here 
 
-lea dx, a ; outputs string a
-mov ah, 9
-int 21h
 
- 
-mov ah, 1 ; intput
-int 21h   
 
-mov bl, al 
+LEA DX, M 
+MOV AH , 9
+INT 21H
 
-mov ah,2  ; new line
-mov dl,0dh
-int 21h
-mov dl,0ah
-int 21h
+MOV AH , 1
+INT 21H
 
- 
+MOV BL, AL
 
-lea dx, b ; outputs string b
-mov ah, 9
-int 21h
+MOV AH, 2
+MOV DL, 0DH
+INT 21H
 
-mov dl, bl
-mov ah, 2 ; user output
-int 21h
+MOV DL , 0AH
+INT 21H
+
+LEA DX , MM
+MOV AH, 9
+INT 21H 
+
+MOV DL,BL
+MOV AH, 2
+INT 21H
+
+
 
  
 
