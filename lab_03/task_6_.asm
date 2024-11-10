@@ -15,16 +15,12 @@ MOV DS,AX
 ;enter your code here
 
 
-MOV AH, 9    ;HEX
+MOV AH, 9      ;HEX
 LEA DX, HEX
 INT 21H 
 
 MOV AH, 1      ;INPUT
-INT 21H
-
-SUB AL, 'A'    ;CONVERSION HEX TO DEC
-ADD AL, 10
-
+INT 21H  
 
 MOV BL, AL
 
@@ -33,16 +29,51 @@ MOV AH , 2      ;NEW LINE
 MOV DL, 0DH
 INT 21H
 MOV DL, 0AH
-INT 21H 
+INT 21H
+
 
 MOV AH, 9    ;DEC
 LEA DX, DEK
-INT 21H 
+INT 21H     
+
+
+
+
+MOV DL, '1'
+MOV AH, 2
+INT 21H
+
+SUB BL, 11H
+MOV DL, BL
 
 MOV AH, 2
-MOV DL, BL
-ADD DL, '0'
-INT 21H 
+INT 21H
+
+;SUB AL, 'A'    ;CONVERSION HEX TO DEC
+;ADD AL, 10 
+
+;ADD AL, 30H
+
+
+;MOV BL, AL 
+;ADD BL,'0'
+
+
+
+;MOV AH , 2      ;NEW LINE
+;MOV DL, 0DH
+;INT 21H
+;MOV DL, 0AH
+;INT 21H 
+
+;MOV AH, 9    ;DEC
+;LEA DX, DEK
+;INT 21H 
+
+;MOV AH, 2
+;MOV DL, BL
+;ADD DL, '0'
+;INT 21H 
 
 
 

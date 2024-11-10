@@ -6,10 +6,8 @@
 a db "please enter first number  : $"
 b db "please enter second number : $"
 
-SUM DB "THE SUM: $"
-DUB DB "THE SUB: $"
-MULL DB "THE MUL : $"  
-DIVV DB "THE DIV : $"
+
+SUBB DB "THE SUB: $"
 
 .CODE
 MAIN PROC
@@ -48,9 +46,9 @@ SUB AL, '0' ; convert second num
 MOV CL, AL 
 
 
-ADD CL, BL   ; add the two
+SUB CL, BL   ; SUB the two
 
-ADD CL, '0'   ; convert the sum
+ADD CL, '0'   ; convert the sub
 
 
 mov ah,2  ; new line
@@ -60,11 +58,11 @@ mov dl,0ah
 int 21h
 
 
-MOV AH, 9     ; the sum : 
-LEA DX, SUM
+MOV AH, 9     ; the sub : 
+LEA DX, SUBB
 INT 21H 
        
-MOV DL, CL    ; output the sum
+MOV DL, CL    ; output the sub
 MOV AH, 2
 INT 21H
 
